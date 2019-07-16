@@ -57,5 +57,12 @@ namespace OrderService.Repositories
             var collection = this.Database.GetCollection<ProductData>("products");
             return collection.Find<ProductData>(o => true).ToList();
         }
+
+
+        public void SaveProduct(ProductData product)
+        {
+            var collection = this.Database.GetCollection<ProductData>("products");
+            collection.InsertOne(product);
+        }
     }
 }

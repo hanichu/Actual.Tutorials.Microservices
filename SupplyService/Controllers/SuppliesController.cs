@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Common;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using OrderService.Repositories;
 using SupplyService.Model;
 
@@ -33,5 +34,35 @@ namespace SupplyService.Controllers
 
             return new JsonResult(new SuccessWithResult<IEnumerable<ProductData>>(products));
         }
+
+        [HttpPost]
+        public IActionResult Save([FromBody] ProductData data)
+        {
+            if (data.Availability<=0)
+                return new JsonResult(new Fault("Product not available"));
+
+            var product = new ProductData()
+            {
+                Id = ObjectId.GenerateNewId(),
+                Availability = data.Availability,
+                Categories = data.Categories,
+                Description = data.Description
+            };
+
+            SuppliesRepository repository = new SuppliesRepository(Program.connectionString);
+
+            repository.SaveProduct(product);
+
+            //this.Bus.Publish(new OrderCreatedMessage
+            //{
+            //    OrderId = order.Id.ToString(),
+            //    Items = data.Items
+            //});
+
+            var productUri = $"http://{{host}}/supplies/GetProductBySKU?sku={product.Id.ToString()}";
+            
+            return new JsonResult(new SuccessWithResult<string>(product.Id.ToString()));
+        }
+
     }
 }
