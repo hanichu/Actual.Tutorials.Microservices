@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService", "OrderService\OrderService.csproj", "{5EA1A4F6-DD16-4A89-9B1C-D47E8F9A4CBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupplyService", "SupplyService\SupplyService.csproj", "{82CF5A6D-5FEA-4DDC-917B-EBC9FE6F7E83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{38AE904C-B59B-405B-A926-29D3227634C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{AA6AD6EA-B8B2-46F4-BF6C-7F0B0C7537E5}"
+	ProjectSection(SolutionItems) = preProject
+		DockerFile = DockerFile
+		mongosetup.js = mongosetup.js
+		nginx.conf = nginx.conf
+		setup.bat = setup.bat
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EA1A4F6-DD16-4A89-9B1C-D47E8F9A4CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EA1A4F6-DD16-4A89-9B1C-D47E8F9A4CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EA1A4F6-DD16-4A89-9B1C-D47E8F9A4CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EA1A4F6-DD16-4A89-9B1C-D47E8F9A4CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82CF5A6D-5FEA-4DDC-917B-EBC9FE6F7E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82CF5A6D-5FEA-4DDC-917B-EBC9FE6F7E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82CF5A6D-5FEA-4DDC-917B-EBC9FE6F7E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82CF5A6D-5FEA-4DDC-917B-EBC9FE6F7E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38AE904C-B59B-405B-A926-29D3227634C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38AE904C-B59B-405B-A926-29D3227634C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38AE904C-B59B-405B-A926-29D3227634C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38AE904C-B59B-405B-A926-29D3227634C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61A2E5AB-05D9-40B2-8BB6-CFB48110B380}
+	EndGlobalSection
+EndGlobal

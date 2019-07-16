@@ -1,0 +1,6 @@
+FROM nginx:alpine
+MAINTAINER Dba Lab S.p.a.
+WORKDIR /etc/nginx
+COPY ./nginx.conf .
+EXPOSE 8280
+EXPOSE 80
