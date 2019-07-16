@@ -53,15 +53,12 @@ namespace SupplyService.Controllers
 
             repository.SaveProduct(product);
 
-            //this.Bus.Publish(new OrderCreatedMessage
-            //{
-            //    OrderId = order.Id.ToString(),
-            //    Items = data.Items
-            //});
-
+            /*
+            Stampa al posto dell'id il DTO con tanto di uri del prodotto 
+            */
             var productUri = $"http://{{host}}/supplies/GetProductBySKU?sku={product.Id.ToString()}";
             
-            return new JsonResult(new SuccessWithResult<string>(product.Id.ToString()));
+            return new JsonResult(new SuccessWithResult<string>(productUri));
         }
 
     }
